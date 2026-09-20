@@ -1,28 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaStore</title>
+  <meta name="theme-color" content="#ffffff">
+  <title>NovaStore | متجرك الرقمي</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <header>
-    <h1>NovaStore</h1>
-    <p>متجرك الإلكتروني</p>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#"><span class="brand-mark">✦</span><span>Nova<span>Store</span></span></a>
+      <nav class="nav-links">
+        <a href="#home">الرئيسية</a><a href="#categories">التصنيفات</a><a href="#featured">المميز</a><a href="#deals">العروض</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="بحث">⌕</button>
+        <button class="icon-btn" id="wishlistBtn" aria-label="المفضلة">♡<b id="wishCount">0</b></button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">🛒<b id="cartCount">0</b></button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+    <div class="searchbar container" id="searchbar"><input id="searchInput" placeholder="ابحث عن تطبيق، لعبة، فيلم، قالب..." autocomplete="off"><button id="clearSearch">×</button></div>
   </header>
 
-  <main>
-    <h2>مرحباً بك في NovaStore</h2>
-    <p>اكتشف منتجاتنا واختر ما يناسبك.</p>
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow">منصة رقمية متكاملة ✨</span>
+        <h1>كل ما تحبه<br><strong>في مكان واحد.</strong></h1>
+        <p>اكتشف تطبيقات، ألعاب، أفلام، أنمي، قوالب تصميم ومحتوى رقمي مختار بعناية.</p>
+        <div class="hero-actions"><a class="btn primary" href="#featured">استكشف المتجر ←</a><a class="btn ghost" href="#categories">تصفح الأقسام</a></div>
+        <div class="hero-trust"><span>✓ منتجات مختارة</span><span>✓ تجربة سهلة</span><span>✓ تصميم متجاوب</span></div>
+      </div>
+      <div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><div class="hero-card main-card"><span class="mini-label">اختيار الأسبوع</span><div class="big-icon">🚀</div><h3>ابدأ رحلتك الرقمية</h3><p>أدوات ومحتوى يرفع إنتاجيتك ومتعتك.</p><div class="rating">★★★★★ <small>4.9</small></div></div><div class="floating-card">🔥 الأكثر طلبًا<br><strong>محتوى جديد يوميًا</strong></div></div>
+    </section>
 
-    <button>تصفح المنتجات</button>
+    <section class="container section" id="categories">
+      <div class="section-head"><div><span class="eyebrow">اكتشف عالمك</span><h2>تصفح حسب الفئة</h2></div><button class="text-btn" data-category="all">عرض الكل ←</button></div>
+      <div class="categories">
+        <button class="category active" data-category="all"><span>✦</span><b>الكل</b><small>كل المنتجات</small></button>
+        <button class="category" data-category="apps"><span>📱</span><b>تطبيقات</b><small>أدوات ذكية</small></button>
+        <button class="category" data-category="games"><span>🎮</span><b>ألعاب</b><small>ترفيه وتحدي</small></button>
+        <button class="category" data-category="movies"><span>🎬</span><b>أفلام</b><small>سينما ومحتوى</small></button>
+        <button class="category" data-category="anime"><span>🍥</span><b>أنمي</b><small>عالم الأنمي</small></button>
+        <button class="category" data-category="design"><span>🎨</span><b>تصميم</b><small>قوالب وموارد</small></button>
+      </div>
+    </section>
+
+    <section class="container section" id="featured">
+      <div class="section-head"><div><span class="eyebrow">مختارات Nova</span><h2>منتجات مميزة</h2></div><div class="filter-row"><button class="filter active" data-sort="featured">الأكثر تميزًا</button><button class="filter" data-sort="price">السعر</button><button class="filter" data-sort="rating">التقييم</button></div></div>
+      <div class="products" id="products"></div>
+      <div class="empty" id="empty">لا توجد نتائج مطابقة. جرّب كلمة بحث أخرى.</div>
+    </section>
+
+    <section class="deal container" id="deals"><div><span class="eyebrow">لفترة محدودة</span><h2>خصم خاص على مختارات رقمية</h2><p>استفد من عروضنا التجريبية داخل الواجهة، ويمكن ربط الدفع لاحقًا.</p><a class="btn primary" href="#featured">شاهد العروض</a></div><div class="deal-badge">-30%<small>عرض مميز</small></div></section>
+
+    <section class="container newsletter"><div><span class="eyebrow">ابقَ على اطلاع</span><h2>أحدث المنتجات في بريدك</h2><p>سجّل بريدك للحصول على إشعارات الإصدارات والعروض.</p></div><form id="newsletter"><input type="email" placeholder="بريدك الإلكتروني" required><button class="btn primary">اشتراك</button></form></section>
   </main>
 
-  <footer>
-    <p>© 2026 NovaStore</p>
-  </footer>
+  <footer><div class="container footer-grid"><div><a class="brand" href="#"><span class="brand-mark">✦</span><span>Nova<span>Store</span></span></a><p>وجهتك الرقمية لاكتشاف محتوى وأدوات جديدة.</p></div><div><h4>روابط</h4><a href="#home">الرئيسية</a><a href="#categories">التصنيفات</a><a href="#featured">المنتجات</a></div><div><h4>المساعدة</h4><a href="#">الأسئلة الشائعة</a><a href="#">سياسة الخصوصية</a><a href="#">تواصل معنا</a></div></div><div class="copyright">© 2026 NovaStore — جميع الحقوق محفوظة</div></footer>
 
+  <aside class="drawer" id="drawer"><div class="drawer-head"><h3 id="drawerTitle">سلة التسوق</h3><button id="drawerClose">×</button></div><div id="drawerBody"></div><div class="drawer-foot" id="drawerFoot"></div></aside><div class="overlay" id="overlay"></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
 </body>
 </html>
